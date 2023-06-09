@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Login', href: '/login', current: false },
   { name: 'Registro', href: '/register', current: false },
   { name: 'Escanea tu QR', href: '/login', current: false },
-  { name: 'Sobre nosotros', href: '/points-obtained', current: false },
+  { name: 'Sobre nosotros', href: '/aboutus', current: false },
 ]
 
 function classNames(...classes) {
@@ -25,11 +25,11 @@ export const NavBar = () => {
 
         <>
 
-            <div >
+          <div className=''>
             <img src="../assets/Logo.png" alt="logo" className='Logo' />
-            </div>
+          </div>
 
-   
+
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden  w-full">
@@ -76,16 +76,16 @@ export const NavBar = () => {
 
                     ))}
 
-                    <div className="flex ml-auto ">
-                      <span className="mx-2 mr-2">Escanea aquí</span>
+                    <div className="flex ml-auto px-3 py-2 right-1 absolute ">
+                      <span className="mx-2 text-sm font-medium">Escanea aquí</span>
                       <NavLink to={'login'}>
                         <img
                           src="\assets\qr.png"
                           alt="scan-logo"
-                          className="fill-current text-white h-6 m-auto w-6 hover:text-white hover:bg-gray-600"
+                          className="fill-current text-white h-6 m-auto w-6 hover:text-white hover:shadow"
                         />
                       </NavLink>
-                      
+
                     </div>
                   </div>
 
@@ -104,7 +104,7 @@ export const NavBar = () => {
                 <NavLink
                   key={item.name}
                   to={item.href}
-                  onClick={close} 
+                  onClick={close}
                   className={classNames(
                     item.current ? 'bg-gray-600 text-slate-950' : 'text-slate-950 hover:bg-[#f89a16] hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'

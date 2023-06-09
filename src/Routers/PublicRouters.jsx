@@ -1,8 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Home } from '../Public/Pages';
+import { AboutUs, Home } from '../Public/Pages';
 import { RegisterPage } from '../Auth/Pages';
 import { LoginPage } from '../Auth/Pages/LoginPage';
-import { PointsObtained } from '../Private/Components/PointsObtained';
 
 export const PublicRouters = () => {
 
@@ -26,8 +25,8 @@ export const PublicRouters = () => {
                 />
 
                 <Route
-                    path='points-obtained'
-                    element={<PointsObtained />}
+                    path='aboutus'
+                    element={<AboutUs />}
                 />
                 
 

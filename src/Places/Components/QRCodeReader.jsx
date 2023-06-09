@@ -50,7 +50,11 @@ export const QRCodeReader = ({ setQRCode, cam, setCam }) => {
       // facingMode="environment"
       // style={{ width: '50%' }}
       />
-      <button className='hover:text-[#f89a16] hover:bg-gray-100 h-2 text-lg w-full text-center' onClick={handleCam}><i className="fa-solid fa-camera-rotate"></i></button>
+      <button
+        className='hover:text-[#f89a16] hover:bg-gray-100 h-2 text-lg mt-2 w-full text-center'
+        onClick={handleCam}
+      ><i className="fa-solid fa-camera-rotate"></i>
+      </button>
 
     </div>
   );

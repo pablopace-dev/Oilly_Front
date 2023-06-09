@@ -1,9 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Home } from '../Public/Pages';
-import { Logout, QrPage, Win1000Page } from '../Private/Pages';
-import { MisPuntos } from '../Private/Pages/MisPuntos';
+import { AboutUs, Home } from '../Public/Pages';
+import { Logout, QrPage, Win1000Page, AcumulatedPage, MisPuntos } from '../Private/Pages';
 import { CarrouselAgua } from '../Private/Components/CarrouselAgua';
-import { AcumulatedPage } from '../Private/Pages/AcumulatedPage';
 
 
 export const PrivateRouters = () => {
@@ -46,6 +44,11 @@ export const PrivateRouters = () => {
                 <Route
                     path='/acumulated'
                     element={<AcumulatedPage />}
+                />
+
+                <Route
+                    path='aboutus'
+                    element={<AboutUs />}
                 />
 
                 <Route path='/*' element={<Navigate to={'/'} />} />

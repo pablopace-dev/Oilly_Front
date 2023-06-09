@@ -39,8 +39,8 @@ export const HomePage = () => {
 
         <section>
 
-            <div className='absolute top-0 left-0 z-[-1] w-full'>
-                <img className='w-full max-h-48 object-fill' src="../assets/rectangle.png" />
+            <div className='absolute top-0 left-0 z-[-1] w-full h-48'>
+                <img className='w-full max-h-44 object-fill' src="../assets/rectangle.png" />
             </div>
 
             <h1 className="text-center text-3xl mt-5 font-bold">{user.name}</h1>

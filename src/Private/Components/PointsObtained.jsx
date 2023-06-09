@@ -16,7 +16,7 @@ export const PointsObtained = ({ recycle }) => {
 
         const ind = places.findIndex(pl => pl.place_id == place_id);
 
-        return ind != -1 ? places[ind].image_url : '';
+        return ind != -1 ? places[ind].image_url : '../assets/noPic.png';
     };
 
 
@@ -74,11 +74,11 @@ export const PointsObtained = ({ recycle }) => {
 
                         <p className='text-base font-normal'>¿Gastarías tus {recycle.reward} puntos en {recycle.place_name}?</p>
 
-                        <div className='w-full mt-4 rounded-2xl'>
+                        <div className='w-full mt-4 h-48 rounded-2xl'>
                             <img
                                 src={getPic(recycle.place_id)}
                                 alt="Restaurant Picture"
-                                className='rounded-2xl object-cover w-full max-h-64' />
+                                className='rounded-2xl object-cover w-full max-h-48' />
                         </div>
 
                         <button>

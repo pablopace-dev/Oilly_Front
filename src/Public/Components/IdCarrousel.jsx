@@ -35,61 +35,60 @@ export const IdCarrousel = () => {
 
 
   return (
-    <>
-    <section>
-      <div className='mt-28'>
-        <p className="ml-4 mb-4 mt-4 text-left text-2xl">
-          <strong>Restaurantes donde podrás canjear los puntos</strong>
-        </p>
-        <div className="max-w-4xl mx-auto">
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            <div>
-              {filtered.length > 0 ? (
-                <Carousel
-                  infiniteLoop={true}
-                  autoPlay={true}
-                  showThumbs={false}
-                  showStatus={false}
-                  centerMode={true}
-                  centerSlidePercentage={50}
-                  interval={3000}
-                  showIndicators={false}
-                >
+    <section className='mt-8'>
 
-                  {filtered.map(restaurant => (
+      <p className="ml-4 mb-4 mt-4 text-left text-2xl font-semibold">
+        Restaurantes donde podrás canjear los puntos
+      </p>
+      <div className="max-w-4xl mx-auto">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div>
+            {filtered.length > 0 ? (
+              <Carousel
+                infiniteLoop={true}
+                autoPlay={true}
+                showThumbs={false}
+                showStatus={false}
+                centerMode={true}
+                centerSlidePercentage={50}
+                interval={3000}
+                showIndicators={false}
+              >
 
-                    <div key={restaurant.id} className="relative w-44">
+                {filtered.map(restaurant => (
 
-                      <div className="h-32 w-full">
-                        <img src={restaurant.image_url || '../assets/NoPic.png'} alt={restaurant.name} className="h-full w-full max-w-full rounded-sm" />
-                      </div>
-                      <p className="text-left font-medium text-base mt-1 mb-3">{restaurant.name}</p>
+                  <div key={restaurant.id} className="relative w-44">
 
-                      <div className='flex gap-1'>
-                        <div className='w-10 h-10'>
-                          <img src={Group} alt="moneda" className='imgCoin w-full h-full' />
-                        </div>
+                    <div className="h-32 w-full">
+                      <img src={restaurant.image_url || '../assets/NoPic.png'} alt={restaurant.name} className="h-full w-full max-w-full rounded-sm" />
+                    </div>
+                    <p className="text-left font-medium text-base mt-1 mb-3">{restaurant.name}</p>
 
-                        <div className=''>
-                          <p className='max-w max-h font-normal text-sm text-left'>Consigue descuentos desde 5 euros</p>
-                        </div>
+                    <div className='flex gap-1'>
+                      <div className='w-10 h-10'>
+                        <img src={Group} alt="moneda" className='imgCoin w-full h-full' />
                       </div>
 
+                      <div className=''>
+                        <p className='max-w max-h font-normal text-sm text-left'>Consigue descuentos desde 5 euros</p>
+                      </div>
                     </div>
 
-                  ))}
-                </Carousel>
-              ) : (
-                <p className='text-center text-slate-500'>Aún no tienes recomendaciones.</p>
-              )}
-            </div>
-          )}
-        </div>
+                  </div>
+
+                ))}
+              </Carousel>
+            ) : (
+              <p className='text-center text-slate-500'>Aún no tienes recomendaciones.</p>
+            )}
+          </div>
+        )}
       </div>
-      </section>
-    </>
+
+    </section>
+
   )
 };
 

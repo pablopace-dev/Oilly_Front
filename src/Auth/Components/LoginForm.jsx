@@ -97,7 +97,7 @@ export const LoginForm = () => {
               }
             </div>
 
-            <div className="block text-gray-400 text-sm absolute right-8 mt-0">
+            <div className="block text-gray-400 text-sm text-right">
               <button>
                 <p>¿Has olvidado tu contraseña?</p>
               </button>

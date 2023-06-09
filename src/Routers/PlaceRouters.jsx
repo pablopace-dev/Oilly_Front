@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { Logout, RecycleQRpage } from '../Private/Pages';
-import { HomePage } from '../Places/Pages';
+import { Logout } from '../Private/Pages';
+import { HomePage, RecycleQRpage } from '../Places/Pages';
 
 
 export const PlaceRouters = () => {

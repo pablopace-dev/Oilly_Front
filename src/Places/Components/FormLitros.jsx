@@ -68,7 +68,7 @@ export const FormLitros = ({ setQRCode, qrCode }) => {
     <>
       <section>
 
-        <div className=" w-4/5 mx-auto mt-4 ">
+        <div className=" w-4/5 mx-auto mt-4 sm:mt-12 ">
           <form onSubmit={handleSubmit} noValidate className=" shadow-lg p-4 rounded-md">
 
             <div className="mb-4">
@@ -101,6 +101,7 @@ export const FormLitros = ({ setQRCode, qrCode }) => {
                 type="number"
                 id="quantity"
                 name="quantity"
+                autoFocus
                 value={quantity}
                 onChange={handleQuantityChange}
                 required

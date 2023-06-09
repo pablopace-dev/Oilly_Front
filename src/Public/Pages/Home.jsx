@@ -96,7 +96,7 @@ export const Home = () => {
                 <section>
 
                 <div className="bg-black opacity-100 mt-12">
-                    <img src='../assets/Frame 34709.png' alt="Image 2" />
+                    <img className="mx-auto" src='../assets/Frame 34709.png' alt="Image 2" />
                 </div>
                 </section>
 

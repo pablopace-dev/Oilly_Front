@@ -41,7 +41,7 @@ function App() {
 
       </header>
 
-      <main className="max-w-screen-sm mx-auto">
+      <main className="max-w-screen-sm mx-auto min-w-[360px] ">
 
         {
           (status === 'authenticated') ?
