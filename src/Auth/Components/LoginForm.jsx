@@ -12,9 +12,7 @@ export const LoginForm = () => {
   } = useForm();
 
 
-
   const { errorMessage, loginStart, isLoading } = useUserStore();
-
   const onSubmit = (ev) => {
 
     ev.preventDefault();
@@ -93,7 +91,7 @@ export const LoginForm = () => {
                 name="password"
                 placeholder="********" />
               {
-                errorMessage && <span className="text-red-600 text-sm">{errorMessage}</span>
+                (errorMessage?.loginErr) && <span className="text-red-600 text-sm">{errorMessage.loginErr}</span>
               }
             </div>
 
@@ -121,10 +119,10 @@ export const LoginForm = () => {
               <img src="\assets\Apple.png" alt="Apple" />
             </div>
             <div className="mt-4 cursor-pointer">
-              <img src="\assets\google.png" alt="Apple" />
+              <img src="\assets\google.png" alt="Google" />
             </div>
             <div className="mt-4 cursor-pointer">
-              <img src="\assets\facebook.png" alt="Apple" />
+              <img src="\assets\facebook.png" alt="Facebook" />
             </div>
 
             <div className="text-sm mt-6 text-center ">

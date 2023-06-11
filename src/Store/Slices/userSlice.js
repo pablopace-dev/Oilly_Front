@@ -84,6 +84,11 @@ export const userSlice = createSlice({
             state.errorMessage = action.payload;
         },
 
+        clearError: (state, action) => {
+
+            state.errorMessage = undefined;
+        },
+
     }
 })
 
@@ -99,6 +104,7 @@ export const {
     onLoadPoints,
     onLoadRecycles,
     onError,
+    clearError
 } = userSlice.actions;
 
 

@@ -14,7 +14,7 @@ export const QRCodeReader = ({ setQRCode, cam, setCam }) => {
   }
 
   const handleScan = (data) => {
-    console.log('data', data)
+   
     if (data) {
       setQRCode(data);
     }

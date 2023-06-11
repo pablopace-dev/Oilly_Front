@@ -22,13 +22,9 @@ export const NavBarUser = ({ qr, setQr, user, prevPoints }) => {
 
   // const { user } = useSelector(state => state.user);
 
-  console.log('esto es user en nav bar', user)
-
   const handleQR = () => setQr(!qr);
 
   return (
-
-
 
     <Disclosure as="nav" className="bg-transparent position3">
       {({ open, close }) => (

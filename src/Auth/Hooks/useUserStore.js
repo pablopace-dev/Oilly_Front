@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 import { masterFetch } from "../../Api/fetch";
-import { onError, onLogin, onRegister } from "../../Store/Slices/userSlice";
+import { clearError, onError, onLogin, onRegister } from "../../Store/Slices/userSlice";
 import { onRecommended } from "../../Store/Slices/placesSlice";
 import { setLocal } from "../../Helpers/localStorage";
 import { useState } from "react";
@@ -22,11 +22,11 @@ export const useUserStore = () => {
 
     const dispatchError = (error) => {
 
-        dispatch(onError(error))
+        dispatch(onError(error));
 
         setTimeout(() => {
 
-            dispatch(onError(''))
+            dispatch(clearError());
         }, 6000)
     };
 
@@ -50,7 +50,7 @@ export const useUserStore = () => {
 
                             const err = 'El formato del teléfono no es válido';
 
-                            dispatchError(err);
+                            dispatchError({ loginErr: err });
                             setIsLoading(false);
                             return;
 
@@ -64,7 +64,7 @@ export const useUserStore = () => {
 
                             const err = 'El formato del email no es válido';
 
-                            dispatchError(err);
+                            dispatchError({ loginErr: err });
                             setIsLoading(false);
                             return;
 
@@ -85,7 +85,7 @@ export const useUserStore = () => {
             if (petition.ok == false) {
 
                 setIsLoading(false);
-                dispatchError(petition.msg);
+                dispatchError({ loginErr: petition.msg });
 
             } else {
 
@@ -183,15 +183,15 @@ export const useUserStore = () => {
 
             } else {
 
-                dispatch(onRegister(petition.data[0]))
+                dispatch(onRegister(petition.data[0]));
 
-                const token = petition.token
+                const token = petition.token;
 
 
-                setLocal({ token, role: petition.data[0].user.role });
-                setIsLoading(true);
+                setLocal({ token, role: petition.data[0].role });
+                setIsLoading(false);
 
-                navigate('/')
+                navigate('/');
             }
 
         } catch (error) {
@@ -199,7 +199,6 @@ export const useUserStore = () => {
             console.log('FAILED registerStart', error)
         }
     }
-
 
     return {
         isLoading,

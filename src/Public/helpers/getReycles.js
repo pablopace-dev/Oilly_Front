@@ -3,8 +3,6 @@ import { masterFetch } from "../../Api/fetch"
 
 export const getReycles = async (id, role) => {
 
-    console.log('id', id, 'role', role);
-
     let response;
     if (role == 'place')
         response = await masterFetch(`api/recycle/place/${id}`, 'GET');

@@ -15,7 +15,7 @@ export const useValidateToken = () => {
 
         setTimeout(async () => {
             const petition = await validateToken();
-
+            
             if (petition.ok) {
 
                 if (!user?.role) {

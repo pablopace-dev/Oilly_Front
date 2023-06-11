@@ -18,7 +18,6 @@ export const HomePage = () => {
 
         const response = await getReycles(user.place_id, user.role);
 
-        console.log('response', response);
         if (response.ok) {
 
             dispatch(onLoadRecycles(response.recycles));
